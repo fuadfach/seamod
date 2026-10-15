@@ -102,7 +102,7 @@ section[id]{scroll-margin-top:84px}
 <!-- NAVIGATION BAR -->
 <header class="sticky top-0 z-50 bg-deep text-white shadow-lg">
  <nav class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between gap-4" aria-label="Main">
-  <a href="#top" class="flex items-center gap-3 leading-tight">
+  <a href="index.html" class="flex items-center gap-3 leading-tight">
     <img src="SEA_MOD.jpg" onerror="this.style.display='none'" alt="SEA-Mod Logo" class="h-12 w-12 rounded-full bg-white p-0.5 shadow-md object-cover">
     <span>
         <span class="font-display text-2xl font-bold tracking-tight">SEA-Mod</span>
@@ -117,8 +117,15 @@ section[id]{scroll-margin-top:84px}
    <li><a class="block py-2 hover:text-sea" href="#cultural">Tikanga & Data</a></li>
    <li><a class="block py-2 hover:text-sea" href="#team">Team</a></li>
    <li><a class="block py-2 hover:text-sea" href="#contact">Contact</a></li>
-   <!-- TOMBOL DIGANTI: Request Proposal -->
-   <li><a class="block px-4 py-2 rounded bg-sea text-deep font-semibold hover:bg-white transition" href="#contact"><i class="fa-solid fa-paper-plane" aria-hidden="true"></i> Request Proposal</a></li>
+   <!-- SEARCH BOX (Pengganti Request Proposal) -->
+   <li class="w-full lg:w-auto mt-2 lg:mt-0">
+     <form action="#" method="GET" class="relative flex items-center">
+       <input type="search" name="q" placeholder="Search..." class="w-full lg:w-48 py-2 pl-4 pr-10 rounded bg-white text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-sea text-sm transition">
+       <button type="submit" class="absolute right-3 text-gray-500 hover:text-sea transition" aria-label="Search">
+         <i class="fa-solid fa-search" aria-hidden="true"></i>
+       </button>
+     </form>
+   </li>
   </ul>
  </nav>
 </header>
