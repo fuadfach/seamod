@@ -556,6 +556,19 @@ matchMedia('(prefers-color-scheme: dark)').addEventListener('change',rethemed);
 new MutationObserver(rethemed).observe(document.documentElement,{attributes:true,attributeFilter:['data-theme']});
 let rz=0; addEventListener('resize',()=>{ clearTimeout(rz); rz=setTimeout(()=>{ SG.redraw(); if(!document.getElementById('panel-sh').hidden){ SH.resize(); SH.draw(); } },150); });
 })();
+
+// 1. Mobile Menu Toggle Script (Diperbaiki agar lebih stabil)
+const mb = document.getElementById('menuBtn');
+const menu = document.getElementById('menu');
+
+if (mb && menu) {
+  mb.addEventListener('click', () => { 
+    const isHidden = menu.classList.toggle('hidden') === false; 
+    mb.setAttribute('aria-expanded', isHidden); 
+    menu.classList.toggle('flex', isHidden); 
+  });
+}
+
 </script>
 
 </body></html>
