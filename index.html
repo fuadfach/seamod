@@ -310,11 +310,19 @@ const CONTACT_EMAIL = 'contact@seamod.co.nz';
 const WHITIANGA_POINT = [-36.83, 175.70];            
 const TAURANGA_POINT = [-37.68, 176.16];
 
-// Mobile Menu
-const mb = document.getElementById('menuBtn'), menu = document.getElementById('menu');
-mb.addEventListener('click', () => { const o = menu.classList.toggle('hidden') === false; mb.setAttribute('aria-expanded', o); menu.classList.toggle('flex', o); });
+// 1. Mobile Menu Toggle Script (Diperbaiki agar lebih stabil)
+const mb = document.getElementById('menuBtn');
+const menu = document.getElementById('menu');
 
-// Counter Animation
+if (mb && menu) {
+  mb.addEventListener('click', () => { 
+    const isHidden = menu.classList.toggle('hidden') === false; 
+    mb.setAttribute('aria-expanded', isHidden); 
+    menu.classList.toggle('flex', isHidden); 
+  });
+}
+
+// 2. Counter Animation (Angka berjalan)
 const still = matchMedia('(prefers-reduced-motion: reduce)').matches;
 if (!still && 'IntersectionObserver' in window) {
   const io = new IntersectionObserver(es => es.forEach(en => {
@@ -324,3 +332,12 @@ if (!still && 'IntersectionObserver' in window) {
   }), {threshold: .6});
   document.querySelectorAll('[data-count]').forEach(el => io.observe(el));
 }
+
+// 3. Interactive Map (Diperbaiki: hanya berjalan JIKA ada map di halaman tersebut)
+const mapContainer = document.getElementById('map');
+if (mapContainer) {
+    const map = L.map('map', {scrollWheelZoom: false}).setView([-37.2, 175.9], 8);
+}
+</script>
+</body>
+</html>
